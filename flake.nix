@@ -25,7 +25,10 @@
           {
             virtualisation.docker.enable = true;
             virtualisation.docker.daemon.settings.live-restore = false;
-            services.dokploy.enable = true;
+            services.dokploy = {
+              enable = true;
+              port = "3000:3000";
+            };
           }
         ];
       };
