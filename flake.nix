@@ -2,19 +2,24 @@
   description = "FIU Parking and Transportation NixOS configurations";
 
   inputs = {
+    disko.url = "github:nix-community/disko/latest";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-dokploy.url = "github:el-kurto/nix-dokploy";
   };
 
   outputs = {
-    self,
-    nixpkgs,
+    disko,
     nix-dokploy,
+    nixpkgs,
+    self,
     ...
   }: {
     nixosConfigurations = {
       server = nixpkgs.lib.nixosSystem {
         modules = [
+          ./hosts/server/disk-config.nix
+          disko.nixosModules.disko
           ./hosts/server/configuration-server.nix
           nix-dokploy.nixosModules.default
           {
