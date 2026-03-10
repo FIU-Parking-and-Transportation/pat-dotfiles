@@ -26,6 +26,7 @@
             virtualisation.docker.enable = true;
             virtualisation.docker.daemon.settings.live-restore = false;
             services.dokploy = {
+              database.useInsecureHardcodedPassword = true;
               enable = true;
               port = "3000:3000";
             };
