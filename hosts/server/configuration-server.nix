@@ -16,7 +16,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  networking.hostName = "PAT0D0C";
+  networking.hostName = "PAT4E0E";
   networking.firewall.enable = false;
 
   time.timeZone = "America/New_York";
