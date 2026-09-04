@@ -30,6 +30,7 @@
               port = "3000:3000";
               database.passwordFile = "/var/lib/secrets/dokploy-db-password";
               auth.secretFile = "/var/lib/secrets/dokploy-auth-secret";
+              encryption.keyFile = "/var/lib/secrets/dokploy-encryption-key";
             };
           }
         ];
